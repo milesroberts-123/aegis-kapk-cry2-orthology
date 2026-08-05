@@ -1,0 +1,53 @@
+{
+  "name": "ld_impl_linux-64",
+  "version": "2.46.1",
+  "build": "default_hbd61a6d_102",
+  "build_number": 102,
+  "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+  "subdir": "linux-64",
+  "fn": "ld_impl_linux-64-2.46.1-default_hbd61a6d_102.conda",
+  "md5": "449500f2c089da11c40f5c21312e3e07",
+  "url": "https://conda.anaconda.org/conda-forge/linux-64/ld_impl_linux-64-2.46.1-default_hbd61a6d_102.conda",
+  "sha256": "27d83f1188cd19bcb7754a078b3fa7f4cfb8527f8eb2fde54dd01fc529d1adec",
+  "depends": [
+    "__glibc >=2.17,<3.0.a0",
+    "zstd >=1.5.7,<1.6.0a0"
+  ],
+  "constrains": [
+    "binutils_impl_linux-64 2.46.1"
+  ],
+  "license": "GPL-3.0-only",
+  "timestamp": 1784214507000,
+  "size": 745303,
+  "requested_spec": "None",
+  "package_tarball_full_path": "/home/miles/miniforge3/pkgs/ld_impl_linux-64-2.46.1-default_hbd61a6d_102.conda",
+  "extracted_package_dir": "/home/miles/miniforge3/pkgs/ld_impl_linux-64-2.46.1-default_hbd61a6d_102",
+  "files": [
+    "bin/x86_64-conda-linux-gnu-ld",
+    "x86_64-conda-linux-gnu/bin/ld"
+  ],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": [
+      {
+        "_path": "bin/x86_64-conda-linux-gnu-ld",
+        "prefix_placeholder": "/home/conda/feedstock_root/build_artifacts/binutils_split_1784214241504/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeh",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "sha256": "dd257410439c0475c6e4a552a4365a204ed18118f7e6653d23f9c32de4387d8f",
+        "size_in_bytes": 2966864,
+        "sha256_in_prefix": "67791213f4fb8be6a059d3f8628390f5e3bdcfd65c54c7a91948aec1abc5021d"
+      },
+      {
+        "_path": "x86_64-conda-linux-gnu/bin/ld",
+        "path_type": "softlink",
+        "sha256": "dd257410439c0475c6e4a552a4365a204ed18118f7e6653d23f9c32de4387d8f",
+        "size_in_bytes": 2966864
+      }
+    ]
+  },
+  "link": {
+    "source": "/home/miles/miniforge3/pkgs/ld_impl_linux-64-2.46.1-default_hbd61a6d_102",
+    "type": 1
+  }
+}

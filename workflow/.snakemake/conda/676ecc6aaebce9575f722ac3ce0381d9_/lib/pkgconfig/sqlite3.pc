@@ -1,0 +1,13 @@
+# Package Information for pkg-config
+
+prefix=/home/miles/moi_lab_projects/aegis/workflow/.snakemake/conda/676ecc6aaebce9575f722ac3ce0381d9_
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: SQLite
+Description: SQL database engine
+Version: 3.53.4
+Libs: -L${libdir} -lsqlite3
+Libs.private: -lm -lz -ldl -lpthread -L/home/miles/moi_lab_projects/aegis/workflow/.snakemake/conda/676ecc6aaebce9575f722ac3ce0381d9_/lib -licui18n -licuuc -licudata
+Cflags: -I${includedir}

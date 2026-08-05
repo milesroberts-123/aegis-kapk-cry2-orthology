@@ -1,0 +1,61 @@
+Assuming unrestricted shared filesystem usage.
+host: thinksalot
+Building DAG of jobs...
+Your conda installation is not configured to use strict channel priorities. This is however important for having robust and correct environments (for details, see https://conda-forge.org/docs/user/tipsandtricks.html). Please consider to configure strict priorities by executing 'conda config --set channel_priority strict'.
+Creating conda environment envs/extract.yaml...
+Downloading and installing remote packages.
+Cleaning up conda package tarballs.
+Environment for /home/miles/moi_lab_projects/aegis/workflow/envs/extract.yaml created (location: .snakemake/conda/676ecc6aaebce9575f722ac3ce0381d9_)
+Creating conda environment envs/mafft.yaml...
+Downloading and installing remote packages.
+Cleaning up conda package tarballs.
+Environment for /home/miles/moi_lab_projects/aegis/workflow/envs/mafft.yaml created (location: .snakemake/conda/29c10031b55999c27663e714c1a811ac_)
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+align                    1
+all                      1
+extract_orthologs        1
+total                    3
+
+Select jobs to execute...
+Execute 1 jobs...
+[Wed Aug  5 13:59:18 2026]
+localrule extract_orthologs:
+    input: ../resources/orthology, ../resources/proteomes
+    output: results/AT1G04400_orthologs.fa
+    jobid: 2
+    reason: Missing output files: results/AT1G04400_orthologs.fa
+    resources: tmpdir=/tmp
+Activating conda environment: .snakemake/conda/676ecc6aaebce9575f722ac3ce0381d9_
+[Wed Aug  5 13:59:49 2026]
+Finished jobid: 2 (Rule: extract_orthologs)
+1 of 3 steps (33%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Wed Aug  5 13:59:49 2026]
+localrule align:
+    input: results/AT1G04400_orthologs.fa
+    output: results/AT1G04400_aligned.fa
+    jobid: 1
+    reason: Missing output files: results/AT1G04400_aligned.fa; Input files updated by another job: results/AT1G04400_orthologs.fa
+    resources: tmpdir=/tmp
+Activating conda environment: .snakemake/conda/29c10031b55999c27663e714c1a811ac_
+[Wed Aug  5 14:00:20 2026]
+Finished jobid: 1 (Rule: align)
+2 of 3 steps (67%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Wed Aug  5 14:00:20 2026]
+localrule all:
+    input: results/AT1G04400_aligned.fa
+    jobid: 0
+    reason: Input files updated by another job: results/AT1G04400_aligned.fa
+    resources: tmpdir=/tmp
+[Wed Aug  5 14:00:20 2026]
+Finished jobid: 0 (Rule: all)
+3 of 3 steps (100%) done
+Complete log(s): /home/miles/moi_lab_projects/aegis/workflow/.snakemake/log/2026-08-05T135841.064785.snakemake.log

@@ -1,0 +1,10 @@
+query_gene: "AT1G04400"
+
+ortho_dir: "../resources/orthology"
+proteome_dir: "../resources/proteomes"
+
+results_dir: "results"
+
+mafft:
+  threads: 4
+  algorithm: "linsi"

@@ -1,0 +1,33 @@
+---
+title: "AEGIS Kapk: try aligning cry2 to other plant species"
+output: html_notebook
+---
+
+```{r}
+# install.packages("BiocManager")
+# BiocManager::install("ggmsa")
+
+library(ggmsa)
+library(ggplot2)
+```
+
+```{r}
+
+fasta_file <- "../results/AT1G04400_aligned.fa"
+
+# zoomed to a region (start/end are alignment column positions)
+ggmsa(fasta_file, 
+      start = 460, 
+      end = 510, 
+      color = "LETTER", 
+      font = 'helvetical',
+      seq_name = F, 
+      #position_highlight = c(469, 484, 501), 
+      ignore_gaps = T, 
+      char_width = 0,
+      show.legend = T) +
+  geom_msaBar()
+
+ggsave("../results/AT1G04400_msa_view.pdf", height = 5, width = 7)
+
+```

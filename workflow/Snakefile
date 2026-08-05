@@ -1,0 +1,46 @@
+"""Snakemake workflow: extract orthologous protein sequences and align with MAFFT."""
+
+configfile: "config/config.yaml"
+
+
+OUTPUT_FASTA = f"{config['results_dir']}/{config['query_gene']}_orthologs.fa"
+OUTPUT_ALIGNED = f"{config['results_dir']}/{config['query_gene']}_aligned.fa"
+
+
+rule all:
+    input:
+        OUTPUT_ALIGNED,
+
+
+rule extract_orthologs:
+    """Parse orthology files, deduplicate by latest assembly, extract sequences."""
+    input:
+        ortho_dir=config["ortho_dir"],
+        proteome_dir=config["proteome_dir"],
+    output:
+        fasta=OUTPUT_FASTA,
+    conda:
+        "envs/extract.yaml"
+    params:
+        query=config["query_gene"],
+    shell:
+        "python scripts/parse_and_extract.py"
+        " --ortho-dir {input.ortho_dir}"
+        " --proteome-dir {input.proteome_dir}"
+        " --query {params.query}"
+        " --output {output.fasta}"
+
+
+rule align:
+    """Align orthologous sequences with MAFFT L-INS-i."""
+    input:
+        fasta=OUTPUT_FASTA,
+    output:
+        aligned=OUTPUT_ALIGNED,
+    conda:
+        "envs/mafft.yaml"
+    params:
+        algorithm=config["mafft"]["algorithm"],
+        threads=config["mafft"]["threads"],
+    shell:
+        "{params.algorithm} --thread {params.threads} {input.fasta} > {output.aligned}"

@@ -1,0 +1,11 @@
+prefix=/home/miles/moi_lab_projects/aegis/workflow/.snakemake/conda/676ecc6aaebce9575f722ac3ce0381d9_
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+toolexeclibdir=${libdir}
+includedir=/home/miles/moi_lab_projects/aegis/workflow/.snakemake/conda/676ecc6aaebce9575f722ac3ce0381d9_/include
+
+Name: libffi
+Description: Library supporting Foreign Function Interfaces
+Version: 3.5.2
+Libs: -L${toolexeclibdir} -lffi
+Cflags: -I${includedir}
