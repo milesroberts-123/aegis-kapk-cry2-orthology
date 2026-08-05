@@ -1,5 +1,0 @@
-#!/home/miles/moi_lab_projects/aegis/workflow/.snakemake/conda/676ecc6aaebce9575f722ac3ce0381d9_/bin/python3.14
-
-from idlelib.pyshell import main
-if __name__ == '__main__':
-    main()
